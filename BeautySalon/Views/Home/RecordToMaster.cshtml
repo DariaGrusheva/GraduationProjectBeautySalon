@@ -1,0 +1,305 @@
+﻿
+@model Employee
+@{
+    ViewData["Title"] = "Запись";
+}
+
+<form method="post">
+    <input asp-for="@Model.EmployeeId" type="hidden" value="@Model.EmployeeId">
+
+<div class="container-fluid text-center">
+    <div class="row" style="padding-top: 2%;">
+            <div class="col-lg-3" style="padding-top: 5%;">
+            <div class="card cardServices cardEmployeeRecord">
+                <img src="data:image/png;base64,@Model.GetPhotoInBase64String" class="card-img-top" alt="...">
+                <div class="card-body">
+                   <p>@Model.FullName</p>
+                   <p>@Model.Specialization.Name</p>
+                </div>
+            </div>
+        </div>
+
+            <div class="col-lg-5" style="padding-top: 3.5%;">
+            @foreach (var category in Model.CategoryServices)
+            {
+                foreach (var service in category.Services)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="serviceId" id="radio-service-@service.ServiceId" value="@service.ServiceId">
+                        <label class="form-check-label" for="exampleRadios1">
+                            @service.NameService
+                        </label>
+                    </div>
+                }
+            }
+        </div>
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="mb-3">
+                    <label for="dateRecord" class="form-label form-label-record" >Выберите дату: </label>
+                    <input type="date" class="form-control" id="dateRecord">
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord1" value="10:00">
+                            <label class="form-check-label" for="timeRecord1">10:00</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord2" value="10:30">
+                            <label class="form-check-label" for="timeRecord2">10:30</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord3" value="11:00">
+                            <label class="form-check-label" for="timeRecord3">11:00</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord4" value="11:30">
+                            <label class="form-check-label" for="timeRecord4">11:30</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord5" value="12:00">
+                                <label class="form-check-label" for="timeRecord5">12:00</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord6" value="12:30">
+                                <label class="form-check-label" for="timeRecord6">12:30</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord7" value="13:00">
+                                <label class="form-check-label" for="timeRecord7">13:00</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord8" value="13:30">
+                                <label class="form-check-label" for="timeRecord8">13:30</label>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord9" value="14:00">
+                                <label class="form-check-label" for="timeRecord9">14:00</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord10" value="14:30">
+                                <label class="form-check-label" for="timeRecord10">14:30</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord11" value="15:00">
+                                <label class="form-check-label" for="timeRecord11">15:00</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord12" value="15:30">
+                                <label class="form-check-label" for="timeRecord12">15:30</label>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord13" value="16:00">
+                                <label class="form-check-label" for="timeRecord13">16:00</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord14" value="16:30">
+                                <label class="form-check-label" for="timeRecord14">16:30</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord15" value="17:00">
+                                <label class="form-check-label" for="timeRecord15">17:00</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord16" value="17:30">
+                                <label class="form-check-label" for="timeRecord16">17:30</label>
+                            </div>
+                    </div>
+                </div>
+
+                    <div class="row" style="padding-bottom: 3%">
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord17" value="18:00">
+                                <label class="form-check-label" for="timeRecord17">18:00</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord18" value="18:30">
+                                <label class="form-check-label" for="timeRecord18">18:30</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord19" value="19:00">
+                                <label class="form-check-label" for="timeRecord19">19:00</label>
+                            </div>
+                    </div>
+                    <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="timeRecord" id="timeRecord20" value="19:30">
+                                <label class="form-check-label" for="timeRecord20">19:30</label>
+                            </div>
+                    </div>
+                </div>
+                    <label for="clientName" class="form-label form-label-record">Введите имя: </label>
+                <input type="text" class="form-control" id="clientName">
+                    <label for="clientNumber" class="form-label form-label-record">Введите номер телефона: </label>
+                <input type="text" class="form-control" id="clientNumber" placeholder=" +7 . . .">
+
+                    <button type="button" class="btn btn-style" onclick="saveRecord()" style="margin-left:40%"> Записаться </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+</form>
+
+<div class="modal" tabindex="-1" id="successModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Запись сохранена.</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="successModalBody">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-style btn-secondary" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="errorModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="errorModalBody">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-style btn-secondary" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        var recordTimeArray = document.getElementsByName("timeRecord");
+        var recordTime;
+        for (let t of recordTimeArray) {
+            t.onclick = function () {
+                recordTime = this.value;
+            }
+        }
+        var serviceIdArray = document.getElementsByName("serviceId");
+        var serviceId;
+        for (let s of serviceIdArray) {
+            s.onclick = function () {
+                serviceId = this.value;
+            }
+        }
+
+        function saveRecord() {
+            var employeeId = document.getElementById("EmployeeId").value;
+            //var serviceId = document.getElementById("serviceId").value;
+            var dateRecord = document.getElementById("dateRecord").value;
+
+            var clientNumber = document.getElementById("clientNumber").value;
+            var clientName = document.getElementById("clientName").value;
+
+            if (!checkForm(dateRecord, recordTime, clientNumber, clientName, serviceId)) {
+                return false;
+            }
+
+            $.ajax({
+                url: '@Url.ActionLink("SaveRecord", "Home")',
+                method: 'post',
+                dataType: 'json',
+                cache: 'false',
+                data: {
+                    employeeId: employeeId, serviceId: serviceId, dateRecord: dateRecord, timeRecord: recordTime,
+                    clientNumber: clientNumber, clientName: clientName
+                },
+                success: function (data) {
+                    getSuccessModal(data);
+                },
+                error: function (data) {
+                    getModalError("Возникла ошибка");
+                }
+            });
+        }
+
+        function checkForm(dateRecord, recordTime, clientNumber, clientName, serviceId) {
+            if (!dateRecord) {
+                getModalError("Вы не ввели дату записи");
+                return false;
+            }
+            if (!recordTime) {
+                getModalError("Вы не выбрали время");
+                return false;
+            }
+            if (!clientNumber) {
+                getModalError("Вы не ввели номер телефона");
+                return false;
+            }
+            if (!clientName) {
+                getModalError("Вы не ввели имя");
+                return false;
+            }
+            if (!serviceId) {
+                getModalError("Вы не выбрали услугу");
+                return false;
+            }
+            return true;
+        }
+
+        function getModalError(textError) {
+            $("#errorModal .modal-body").html(textError);
+            $("#errorModal").modal('show');
+        }
+
+        function getSuccessModal(textSuccess) {
+            $("#successModal .modal-body").html(textSuccess);
+            $("#successModal").modal('show');
+        }
+
+    </script>
+}

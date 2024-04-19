@@ -1,0 +1,31 @@
+﻿@using BeautySalon.Models.Feedback
+@model List<Feedback>;
+@{
+    ViewData["Title"] = "Отзывы клиентов";
+}
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="~/content/logo2.jpg" class="img-fluid  starting-picture second-picture" alt="Салон красоты, главная">
+        </div>
+    
+    <div class="col-lg-6">
+    <div class="row">
+        
+            <form method="post" asp-action="Create">
+                <div>
+                        <label for="yourName" class="form-label form-label-start">Представьтесь, пожалуйста:</label>
+                    <input type="text" class="form-control" name="criticName">
+                </div>
+                <div>
+                    <label for="feedback" class="form-label">Ваш отзыв:</label>
+                    <textarea class="form-control" name="feedback" rows="6"></textarea>
+                </div>
+                    <button type="submit" class="btn btn-style">Сохранить</button>
+            </form>
+       
+        </div>
+        </div>
+    </div><br/>
+</div>

@@ -1,0 +1,29 @@
+﻿@model List<Employee>;
+@{
+    ViewData["Title"] = "Выбор мастера";
+}
+
+<div class="container text-center">
+    <div class="row">
+        <h2>@ViewBag.Category</h2>
+    </div>
+
+    <div class="row cards">
+        @foreach (var master in Model)
+        {
+            <div class="col-lg-6 col-6">
+                <div class="card cardServices">
+                    <img src="data:image/png;base64,@master.GetPhotoInBase64String" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="@Url.ActionLink("RecordToMaster", "Home", new{masterId=master.EmployeeId})" target="_blank">@master.FullName</a>
+                        <p>@master.Specialization.Name</p>
+                    </div>
+                   
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+
